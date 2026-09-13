@@ -1,10 +1,5 @@
 {
-  "rewrites": [
-    { "source": "/", "destination": "/en.html" },
-    { "source": "/zh.html", "destination": "/index.html" }
-  ],
   "redirects": [
-    { "source": "/en.html", "destination": "/", "permanent": false },
     { "source": "/index.html", "destination": "/zh.html", "permanent": false }
   ]
 }

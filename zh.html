@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MeaningX — Design for Meaning</title>
+<title>MeaningX — 为意义而设计</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* Deep plum (default, from reference) */
-  --accent:#F2B3E9;      /* Orchid accent */
-  --accent-t:var(--accent); /* Accent used as text */
-  --accent-ink:#241C2C;  /* Text sitting on the accent */
-  --bg:#241C2C;          /* Canvas */
+  /* 深紫罗兰（默认，取自参考图） */
+  --accent:#F2B3E9;      /* 淡紫强调色 */
+  --accent-t:var(--accent); /* 用作文字时的强调色 */
+  --accent-ink:#241C2C;  /* 叠在强调色上的文字 */
+  --bg:#241C2C;          /* 画布 */
   --bg-soft:#2B2334;
   --card:#2A2233;
-  --ink:#F7F4F9;         /* Near-white text */
+  --ink:#F7F4F9;         /* 近白正文 */
   --ink-soft:#B3AABF;
   --line:#3D3348;
-  --inv-bg:#1A1422;      /* Inverted panels: marquee / buddy / footer */
+  --inv-bg:#1A1422;      /* 反色区块：跑马灯 / 智能体 / 页脚 */
   --inv-ink:#F5F1F8;
   --term-bg:#160F1E;
   --term-bar:#1E1728;
   --term-line:#332A3E;
-  --display:"Space Grotesk","Helvetica Neue",sans-serif;
-  --mono:"Space Mono","SF Mono",monospace;
+  --display:"PingFang SC","Noto Sans SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",sans-serif;
+  --mono:"Space Mono","SF Mono","PingFang SC",monospace;
 }
 html:not(.dark){
   --bg:#FBF8FC;
@@ -54,9 +54,9 @@ body{
 }
 ::selection{background:var(--accent);color:var(--accent-ink)}
 a{color:inherit;text-decoration:none}
-.mono{font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;font-size:.72rem}
+.mono{font-family:var(--mono);letter-spacing:.08em;font-size:.72rem}
 
-/* ---------- NAV ---------- */
+/* ---------- 导航 ---------- */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
@@ -65,27 +65,27 @@ nav{
   backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line);
 }
-.brand{font-weight:700;font-size:1.15rem;letter-spacing:-.02em}
+.brand{font-weight:700;font-size:1.15rem;letter-spacing:-.02em;font-family:"Space Grotesk","Helvetica Neue",sans-serif}
 .brand em{font-style:normal;color:var(--accent-t)}
 .nav-links{display:flex;gap:1.8rem;align-items:center}
-.nav-links a{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);transition:color .2s}
+.nav-links a{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--ink-soft);transition:color .2s}
 .nav-links a:hover{color:var(--accent-t)}
 .nav-links a.nav-cta{
-  font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;
   border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);
   padding:.5rem 1rem;border-radius:999px;
   transition:filter .2s;
 }
 .nav-links a.nav-cta:hover{filter:brightness(1.08)}
 .nav-links a.lang{
-  font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;
   border:1px solid var(--accent);color:var(--accent-t);
   padding:.5rem .95rem;border-radius:999px;transition:background .2s,color .2s;
 }
 .nav-links a.lang:hover{background:var(--accent);color:var(--accent-ink)}
 @media(max-width:820px){.nav-links a:not(.nav-cta):not(.lang){display:none}}
 
-/* ---------- MARQUEE ---------- */
+/* ---------- 跑马灯 ---------- */
 .marquee{
   margin-top:52px;
   border-bottom:1px solid var(--line);
@@ -94,21 +94,22 @@ nav{
 }
 .marquee-track{display:inline-flex;animation:scroll 28s linear infinite}
 .marquee span{
-  font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;
   padding:0 1.4rem;
 }
 .marquee b{color:var(--accent-t)}
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ---------- HERO ---------- */
+/* ---------- 主视觉 ---------- */
 .hero{padding:6.5rem 2rem 4rem;position:relative}
 .hero-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem}
-.hero-meta span{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.hero-meta span{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--ink-soft)}
 .hero-meta .dot{color:var(--accent-t)}
 .mega{
   font-size:clamp(4rem,16vw,15rem);
   line-height:.86;letter-spacing:-.045em;font-weight:700;
   text-transform:uppercase;
+  font-family:"Space Grotesk","Helvetica Neue",sans-serif;
 }
 .mega .x{color:var(--accent-t);display:inline-block;transform:translateY(-.03em)}
 .mega .outline{
@@ -119,14 +120,14 @@ nav{
 .hero-sub h2{font-size:clamp(1.1rem,2.4vw,1.6rem);font-weight:500;max-width:30em;letter-spacing:-.01em}
 .hero-sub h2 b{color:var(--accent-t);font-weight:700}
 
-/* ---------- SECTION SHELL ---------- */
+/* ---------- 章节骨架 ---------- */
 section{padding:5.5rem 2rem;border-bottom:1px solid var(--line)}
 .sec-head{display:flex;align-items:baseline;gap:1.2rem;margin-bottom:3rem;flex-wrap:wrap}
 .sec-num{font-family:var(--mono);color:var(--accent-t);font-size:.85rem;font-weight:700}
 .sec-title{font-size:clamp(1.8rem,4.5vw,3rem);font-weight:700;letter-spacing:-.03em;line-height:1.05}
-.sec-tag{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--ink-soft);letter-spacing:.12em;text-transform:uppercase}
+.sec-tag{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--ink-soft);letter-spacing:.12em}
 
-/* ---------- STATEMENT ---------- */
+/* ---------- 陈述 ---------- */
 .statement{
   font-size:clamp(1.5rem,3.4vw,2.6rem);
   font-weight:500;letter-spacing:-.02em;line-height:1.35;max-width:22em;
@@ -143,7 +144,7 @@ section{padding:5.5rem 2rem;border-bottom:1px solid var(--line)}
 .pillar p{font-size:.9rem;color:inherit;opacity:.75;margin-top:1rem}
 @media(max-width:820px){.pillars{grid-template-columns:1fr}}
 
-/* ---------- TT BUDDY ---------- */
+/* ---------- TT 设计智能体 ---------- */
 #buddy{background:var(--inv-bg);color:var(--inv-ink);border-bottom:none}
 #buddy .sec-tag{color:color-mix(in srgb,var(--inv-ink) 55%,transparent)}
 #buddy .sec-title{color:var(--inv-ink)}
@@ -152,7 +153,7 @@ section{padding:5.5rem 2rem;border-bottom:1px solid var(--line)}
 .buddy-lede{font-size:clamp(1.15rem,2.2vw,1.5rem);font-weight:500;letter-spacing:-.01em;line-height:1.5;margin-bottom:1.2rem;max-width:26em}
 .buddy-lede b{color:var(--accent-t)}
 .lab-note{
-  font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;
   color:color-mix(in srgb,var(--inv-ink) 55%,transparent);
   border-left:2px solid var(--accent);
   padding:.35rem 0 .35rem 1rem;margin-bottom:2.5rem;
@@ -164,7 +165,7 @@ section{padding:5.5rem 2rem;border-bottom:1px solid var(--line)}
 .feat h3{font-size:1.05rem;font-weight:700}
 .feat p{font-size:.88rem;opacity:.7;margin-top:.35rem}
 
-/* terminal */
+/* 终端 */
 .term{
   background:var(--term-bg);border:1px solid var(--term-line);border-radius:12px;
   font-family:var(--mono);font-size:.78rem;line-height:1.9;
@@ -188,12 +189,12 @@ html:not(.dark) .term{box-shadow:0 24px 70px rgba(26,20,34,.28)}
   display:inline-flex;align-items:center;gap:.5rem;margin-top:1.2rem;
   border:1px solid color-mix(in srgb,var(--inv-ink) 25%,transparent);
   border-radius:999px;padding:.45rem 1rem;
-  font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;
 }
 .status-pill i{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 1.6s infinite}
 @keyframes pulse{50%{opacity:.3}}
 
-/* ---------- OPENSTUDIO ---------- */
+/* ---------- OpenStudio ---------- */
 #studio{background:var(--bg-soft)}
 .os-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:4.5rem}
 @media(max-width:920px){.os-grid{grid-template-columns:1fr;gap:2.5rem}}
@@ -201,10 +202,10 @@ html:not(.dark) .term{box-shadow:0 24px 70px rgba(26,20,34,.28)}
 .os-lede b{color:var(--accent-t)}
 .os-facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
 .os-fact{background:var(--card);padding:1.3rem 1.2rem}
-.os-fact .k{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.os-fact .k{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;color:var(--ink-soft)}
 .os-fact .v{font-size:1.05rem;font-weight:700;margin-top:.4rem;letter-spacing:-.01em}
 
-/* manifesto */
+/* 宣言 */
 .man-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2rem}
 .man-head h3{font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;letter-spacing:-.03em}
 .man-head h3 em{font-style:normal;color:var(--accent-t)}
@@ -223,7 +224,7 @@ html:not(.dark) .term{box-shadow:0 24px 70px rgba(26,20,34,.28)}
 .principle h4{font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:700;letter-spacing:-.02em}
 .principle p{font-size:.95rem;color:var(--ink-soft);margin-top:.6rem;max-width:38em}
 
-/* waitlist */
+/* 候补名单 */
 .waitlist{
   margin-top:4rem;border:1px solid var(--line);border-radius:16px;background:var(--card);
   padding:3rem;display:flex;justify-content:space-between;align-items:center;gap:2.5rem;flex-wrap:wrap;
@@ -239,32 +240,33 @@ html:not(.dark) .term{box-shadow:0 24px 70px rgba(26,20,34,.28)}
 .wl-form input::placeholder{color:var(--ink-soft)}
 .wl-form button{
   border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);
-  font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;
   padding:0 1.6rem;cursor:pointer;border-radius:0 999px 999px 0;
   transition:background .2s,color .2s,border-color .2s;
 }
 .wl-form button:hover{background:transparent;border-color:var(--accent);color:var(--accent-t)}
 .wl-done{font-family:var(--mono);font-size:.8rem;color:var(--accent-t);letter-spacing:.05em}
 
-/* ---------- FOOTER ---------- */
+/* ---------- 页脚 ---------- */
 footer{padding:4rem 2rem 2.5rem;background:var(--inv-bg);color:var(--inv-ink)}
 .foot-mega{
   font-size:clamp(3.5rem,14vw,12rem);font-weight:700;letter-spacing:-.04em;line-height:.9;
   text-transform:uppercase;color:transparent;-webkit-text-stroke:1.5px color-mix(in srgb,var(--inv-ink) 45%,transparent);
   transition:color .5s;
+  font-family:"Space Grotesk","Helvetica Neue",sans-serif;
 }
 .foot-mega:hover{color:var(--accent-t);-webkit-text-stroke:1.5px transparent}
 .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:2.5rem;margin:3.5rem 0}
-.foot-col .k{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:color-mix(in srgb,var(--inv-ink) 45%,transparent);margin-bottom:.9rem}
+.foot-col .k{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;color:color-mix(in srgb,var(--inv-ink) 45%,transparent);margin-bottom:.9rem}
 .foot-col a{display:block;font-size:.9rem;padding:.22rem 0;color:color-mix(in srgb,var(--inv-ink) 80%,transparent);transition:color .2s}
 .foot-col a:hover{color:var(--accent-t)}
 .foot-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid color-mix(in srgb,var(--inv-ink) 18%,transparent);padding-top:1.5rem}
-.foot-base span{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:color-mix(in srgb,var(--inv-ink) 45%,transparent)}
+.foot-base span{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;color:color-mix(in srgb,var(--inv-ink) 45%,transparent)}
 
-/* ---------- INVERTED PANELS: accent always bright orchid ---------- */
+/* ---------- 反色区块：强调色始终用亮淡紫 ---------- */
 .marquee,#buddy,footer,.pillar:hover,.term{--accent-t:var(--accent)}
 
-/* ---------- REVEAL ---------- */
+/* ---------- 滚动显现 ---------- */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
@@ -272,7 +274,7 @@ footer{padding:4rem 2rem 2.5rem;background:var(--inv-bg);color:var(--inv-ink)}
   .marquee-track{animation:none}
 }
 
-/* ---------- TWEAKS ---------- */
+/* ---------- 调整面板 ---------- */
 #tweaks{position:fixed;right:1.1rem;bottom:1.1rem;z-index:200;font-family:var(--mono)}
 #tweak-btn{
   width:42px;height:42px;border-radius:50%;border:1px solid var(--line);
@@ -287,7 +289,7 @@ footer{padding:4rem 2rem 2.5rem;background:var(--inv-bg);color:var(--inv-ink)}
   padding:1rem;box-shadow:0 16px 40px rgba(0,0,0,.15);
 }
 #tweak-panel.open{display:flex}
-#tweak-panel .lbl{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+#tweak-panel .lbl{font-size:.6rem;letter-spacing:.14em;color:var(--ink-soft)}
 .swatches{display:flex;gap:.5rem}
 .sw{
   width:26px;height:26px;border-radius:50%;border:2px solid transparent;cursor:pointer;
@@ -309,60 +311,60 @@ footer{padding:4rem 2rem 2.5rem;background:var(--inv-bg);color:var(--inv-ink)}
 <nav>
   <a class="brand" href="#top">MEANING<em>X</em><sup style="font-size:.55em;color:var(--ink-soft)">®</sup></a>
   <div class="nav-links">
-    <a href="#meaning">Meaning</a>
-    <a href="#buddy">TT Design Buddy</a>
+    <a href="#meaning">意义</a>
+    <a href="#buddy">TT 设计智能体</a>
     <a href="#studio">OpenStudio</a>
-    <a href="#manifesto">Manifesto</a>
-    <a class="lang" href="/zh.html" hreflang="zh-CN" title="中文版">ZH</a>
-    <a class="nav-cta" href="#waitlist">Join Waitlist</a>
+    <a href="#manifesto">宣言</a>
+    <a class="lang" href="/" hreflang="en" title="English version">EN</a>
+    <a class="nav-cta" href="#waitlist">加入候补</a>
   </div>
 </nav>
 
 <div class="marquee" id="top">
   <div class="marquee-track">
-    <span>MeaningX <b>✳</b> Design is a verb <b>✳</b> Design for meaning <b>✳</b> Antidisciplinary <b>✳</b> No single right answer <b>✳</b> Plurality by default <b>✳</b> Values before metrics <b>✳</b> Process as evidence <b>✳</b> Open &amp; reproducible <b>✳</b></span>
-    <span>MeaningX <b>✳</b> Design is a verb <b>✳</b> Design for meaning <b>✳</b> Antidisciplinary <b>✳</b> No single right answer <b>✳</b> Plurality by default <b>✳</b> Values before metrics <b>✳</b> Process as evidence <b>✳</b> Open &amp; reproducible <b>✳</b></span>
+    <span>MeaningX <b>✳</b> 设计是动词 <b>✳</b> 为意义而设计 <b>✳</b> 反学科 <b>✳</b> 没有唯一解 <b>✳</b> 多元是默认 <b>✳</b> 价值先于指标 <b>✳</b> 过程即证据 <b>✳</b> 开放与可复现 <b>✳</b></span>
+    <span>MeaningX <b>✳</b> 设计是动词 <b>✳</b> 为意义而设计 <b>✳</b> 反学科 <b>✳</b> 没有唯一解 <b>✳</b> 多元是默认 <b>✳</b> 价值先于指标 <b>✳</b> 过程即证据 <b>✳</b> 开放与可复现 <b>✳</b></span>
   </div>
 </div>
 
 <header class="hero">
   <div class="hero-meta reveal">
-    <span>Design × AI Research and Practice Collective</span>
-    <span><span class="dot">●</span> Est. 2026 — Research in the open</span>
+    <span>设计 × 人工智能研究和实践共同体</span>
+    <span><span class="dot">●</span> 创立于 2026 年 · 研发过程公开</span>
   </div>
   <h1 class="mega reveal">
     <span class="outline">MEANING</span><br>
     <span class="x">X</span><span class="outline" style="-webkit-text-stroke-width:2px">.</span>
   </h1>
   <div class="hero-sub reveal">
-    <h2>We research and build <b>agents</b> and <b>communities</b> that make design meaningful — our aim is not to produce interfaces faster, but to answer more honestly why something deserves to exist.</h2>
+    <h2>我们研究与构建“让设计更有意义”的<b>智能体</b>与<b>社区</b>——目标不在于更快地产出界面，而在于更诚实地回答：某物为何值得被设计出来。</h2>
   </div>
 </header>
 
 <section id="meaning">
   <div class="sec-head reveal">
     <span class="sec-num">01</span>
-    <h2 class="sec-title">Who we are</h2>
-    <span class="sec-tag">What is MeaningX</span>
+    <h2 class="sec-title">我们是谁</h2>
+    <span class="sec-tag">何为 MeaningX</span>
   </div>
   <p class="statement reveal">
-    MeaningX is a research and practice collective working at the intersection of design and AI. We hold that the meaning of what technology produces is not computed, but <mark>designed</mark>. Accordingly, we do two things: build a design-driven, cross-disciplinary cluster of agents, and cultivate an open benchmark community that measures the plural values of design.
+    MeaningX 是一个立足设计与人工智能交叉领域的研究和实践共同体。我们相信，技术产物的意义不是被计算出来的，而是<mark>被设计出来的</mark>。为此我们做两件事：构建设计驱动的跨学科智能体集群，建设衡量设计多元价值的开放评测社区。
   </p>
   <div class="pillars reveal">
     <div class="pillar">
       <span class="n">01</span>
-      <h3>Research and Practice</h3>
-      <p>Design pluralism, evaluation methods for design agents, and value alignment in human–AI co-creation. Research grows out of practice; practice ripens into research.</p>
+      <h3>研究与实践</h3>
+      <p>设计多元主义、设计智能体评测方法、人机协同中的价值对齐。研究生长于实践，实践沉淀为研究。</p>
     </div>
     <div class="pillar">
       <span class="n">02</span>
-      <h3>Agents</h3>
-      <p>TT Design Buddy is our first work: a design agent that understands design and critiques with evidence — it does not decide for you.</p>
+      <h3>智能体</h3>
+      <p>TT 设计智能体是我们的首个作品：它理解设计、依循证据评审，而不代你决策。</p>
     </div>
     <div class="pillar">
       <span class="n">03</span>
-      <h3>Community</h3>
-      <p>OpenStudio: an open benchmark community for design agents. The content is under construction; the position is published first.</p>
+      <h3>社区</h3>
+      <p>OpenStudio：面向设计智能体的开放评测社区。内容仍在建设中，立场先行发布。</p>
     </div>
   </div>
 </section>
@@ -370,52 +372,52 @@ footer{padding:4rem 2rem 2.5rem;background:var(--inv-bg);color:var(--inv-ink)}
 <section id="buddy">
   <div class="sec-head reveal">
     <span class="sec-num">02</span>
-    <h2 class="sec-title">TT Design Buddy</h2>
-    <span class="sec-tag">Resident design companions</span>
+    <h2 class="sec-title">TT 设计智能体</h2>
+    <span class="sec-tag">常驻设计搭档</span>
   </div>
   <div class="buddy-grid">
     <div>
       <p class="buddy-lede reveal">
-        Not one <b>resident design companion</b>, but many. They draw on knowledge distilled by <b>100+ design experts</b> across design education, research, and practice worldwide — they do not decide for you. They examine every divergence, and explain <b>why</b>.
+        不止一位<b>常驻设计搭档</b>，而是一群。它们整合<b>100 余位设计专家</b>在全球设计教育、研究与实践中沉淀的知识，不代你决策，而是审视每一次偏离，并说明其<b>理由</b>。
       </p>
       <div class="lab-note reveal">
-        Supported by the <b>Tongji–Tencent Cloud Joint Innovation Lab for Design LLM</b>
+        依托 <b>同济-腾讯云大设计大模型联合创新实验室</b>
       </div>
       <div class="feat reveal">
         <span class="n">/01</span>
         <div>
-          <h3>Design Expert Agents</h3>
-          <p>Expertise from leading design educators and practitioners worldwide. The first ten domain agents (design history, ecological design, sustainable design, interaction design, among others) are live on TT Design Society; Buddy brings them into everyday creative practice.</p>
+          <h3>设计专家智能体</h3>
+          <p>整合全球顶尖设计专家的教育与实践知识。首批十个垂直领域智能体（设计史、生态设计、可持续设计、交互设计等）已在 TT 设计学院上线，本智能体将其接入日常创作现场。</p>
         </div>
       </div>
       <div class="feat reveal">
         <span class="n">/02</span>
         <div>
-          <h3>Inspiration Pocket</h3>
-          <p>Large-model analysis of source material: collect, understand, and apply inspiration — turning vague impressions into traceable reasoning.</p>
+          <h3>灵感口袋</h3>
+          <p>借助大模型深度解析素材：收集、理解并运用灵感，将模糊的“感觉”转化为有据可循的“条理”。</p>
         </div>
       </div>
       <div class="feat reveal">
         <span class="n">/03</span>
         <div>
-          <h3>Learn–Create Chain</h3>
-          <p>Design learning, inspiration gathering, and creative practice as one continuum — from question, to inspiration, to artifact.</p>
+          <h3>学习—创作链路</h3>
+          <p>设计学习、灵感收集与实践创作三位一体：从提问到灵感再到产出，全程贯通。</p>
         </div>
       </div>
       <div class="feat reveal">
         <span class="n">/04</span>
         <div>
-          <h3>Evidence-based Critique</h3>
-          <p>Every critique cites a knowledge-base entry, a precedent, or a standard — traceable and contestable. “It feels off” is not an argument.</p>
+          <h3>循证意见</h3>
+          <p>每一条评审意见均引用知识库条目、设计先例或规范。意见可追溯、可反驳——不接受“感觉不对”式的判断。</p>
         </div>
       </div>
-      <div class="status-pill reveal"><i></i>In active development · private alpha</div>
+      <div class="status-pill reveal"><i></i>研发进行中 · 内测阶段</div>
     </div>
     <div class="reveal">
       <div class="term">
         <div class="term-bar">
           <i class="r"></i><i class="y"></i><i class="g"></i>
-          <span>tt-design-buddy — design llm · v0.3 alpha</span>
+          <span>TT 设计智能体 · 设计大模型 v0.3 内测</span>
         </div>
         <div class="term-body" id="term"></div>
       </div>
@@ -427,70 +429,70 @@ footer{padding:4rem 2rem 2.5rem;background:var(--inv-bg);color:var(--inv-ink)}
   <div class="sec-head reveal">
     <span class="sec-num">03</span>
     <h2 class="sec-title">OpenStudio</h2>
-    <span class="sec-tag">Design Benchmark Community</span>
+    <span class="sec-tag">设计评测社区</span>
   </div>
   <div class="os-grid">
     <div>
       <p class="os-lede reveal">
-        An open benchmark community built for <b>design agents</b>. We are building datasets, a knowledge graph, benchmark sets, and tooling.
+        一个面向<b>设计智能体</b>的开放评测社区。我们正在建设数据集、知识图谱、评测集与工具。
       </p>
-      <div class="status-pill reveal" style="margin-top:1.6rem"><i></i>Coming soon</div>
+      <div class="status-pill reveal" style="margin-top:1.6rem"><i></i>即将上线</div>
     </div>
     <div class="os-facts reveal">
-      <div class="os-fact"><div class="k">Datasets</div><div class="v">Real tasks · multiple contexts</div></div>
-      <div class="os-fact"><div class="k">Knowledge graph</div><div class="v">Experts · concept relations</div></div>
-      <div class="os-fact"><div class="k">Benchmark sets</div><div class="v">Multi-dimensional · situated</div></div>
-      <div class="os-fact"><div class="k">Tools</div><div class="v">Open source · reproducible</div></div>
+      <div class="os-fact"><div class="k">数据集</div><div class="v">真实设计任务 · 多重设计情境</div></div>
+      <div class="os-fact"><div class="k">知识图谱</div><div class="v">设计专家 · 概念关系网络</div></div>
+      <div class="os-fact"><div class="k">评测集</div><div class="v">多维度 · 跟随情境</div></div>
+      <div class="os-fact"><div class="k">工具</div><div class="v">开源 · 可复现</div></div>
     </div>
   </div>
 
   <div id="manifesto">
     <div class="man-head reveal">
-      <h3>OpenStudio <em>Manifesto</em></h3>
-      <span class="mono">Evaluating for plurality</span>
+      <h3>OpenStudio <em>宣言</em></h3>
+      <span class="mono">为多元而评</span>
     </div>
     <div class="principle reveal">
-      <span class="num">I</span>
+      <span class="num">壹</span>
       <div>
-        <h4>No Single Right Answer</h4>
-        <p>“What counts as good design” is itself a design question. We refuse to compress design into a single score or a loss curve. The task of a benchmark is to expose disagreement, not to erase it — the leaderboard should have ties at first place, together with their reasons for objecting to one another.</p>
+        <h4>设计没有唯一解</h4>
+        <p>“什么是好设计”本身就是一个设计问题。我们拒绝将设计压缩为单一分数或损失曲线。评测的职责在于呈现分歧，而非抹平分歧——排行榜上应当有并列的第一名，及其相互反对的理由。</p>
       </div>
     </div>
     <div class="principle reveal">
-      <span class="num">II</span>
+      <span class="num">贰</span>
       <div>
-        <h4>Antidisciplinary by Default</h4>
-        <p>Evaluating design agents requires designers, engineers, anthropologists, and real users at the same table. Disciplinary boundaries are meant to be crossed, not hidden behind. The jury is always larger than the lab.</p>
+        <h4>跨学科是默认设置</h4>
+        <p>设计智能体的评测需要设计师、工程师、人类学家与真实用户同席。学科边界是用来跨越的，而不是用来藏身的。评委席永远大于实验室。</p>
       </div>
     </div>
     <div class="principle reveal">
-      <span class="num">III</span>
+      <span class="num">叁</span>
       <div>
-        <h4>Values Before Metrics</h4>
-        <p>Every benchmark quantifies something someone cares about. Declare what you care about before claiming to measure it well. Quantification exists to make values discussable — not to make value judgments on our behalf.</p>
+        <h4>价值先于指标</h4>
+        <p>任何评测都在量化某种“在乎”。先公开你所珍视的价值，再讨论测得准不准。量化的目的是使价值可被讨论，而非代我们作出价值判断。</p>
       </div>
     </div>
     <div class="principle reveal">
-      <span class="num">IV</span>
+      <span class="num">肆</span>
       <div>
-        <h4>Process as Evidence</h4>
-        <p>We likewise evaluate how results are reached: the breadth of exploration, the reasoning behind trade-offs, the options set aside. A transparent process merits the same score as a beautiful outcome.</p>
+        <h4>过程即证据</h4>
+        <p>我们同样评测“如何得到”：探索的广度、取舍的理由、被放弃的方案。一个透明的过程，理应与一个漂亮的结果同分。</p>
       </div>
     </div>
     <div class="principle reveal">
-      <span class="num">V</span>
+      <span class="num">伍</span>
       <div>
-        <h4>Open &amp; Reproducible</h4>
-        <p>Tasks, data, and grading rationales are all open. We can be outperformed; we refuse to be a black box. Any agent’s score must be fully replayable — and challengeable — within the community.</p>
+        <h4>开放与可复现</h4>
+        <p>任务、数据与判分理由全部开放。可以被超越，但不可以成为黑箱。任何智能体的成绩，均应能在社区中被完整重放并接受质疑。</p>
       </div>
     </div>
   </div>
 
   <div class="waitlist reveal" id="waitlist">
-    <h3>Get <em>early access</em>.</h3>
+    <h3>抢先<em>体验</em>。</h3>
     <form class="wl-form" id="wl-form">
-      <input type="email" required placeholder="your@email.com" aria-label="Email">
-      <button type="submit">Join Waitlist</button>
+      <input type="email" required placeholder="your@email.com" aria-label="邮箱">
+      <button type="submit">加入候补</button>
     </form>
   </div>
 </section>
@@ -499,46 +501,46 @@ footer{padding:4rem 2rem 2.5rem;background:var(--inv-bg);color:var(--inv-ink)}
   <a class="foot-mega" href="#top">MEANINGX</a>
   <div class="foot-grid">
     <div class="foot-col">
-      <div class="k">Projects</div>
-      <a href="#buddy">TT Design Buddy</a>
+      <div class="k">项目</div>
+      <a href="#buddy">TT 设计智能体</a>
       <a href="#studio">OpenStudio</a>
     </div>
     <div class="foot-col">
-      <div class="k">Community</div>
-      <a href="#manifesto">Manifesto</a>
-      <a href="#waitlist">Join the Waitlist</a>
+      <div class="k">社区</div>
+      <a href="#manifesto">宣言</a>
+      <a href="#waitlist">加入候补名单</a>
     </div>
     <div class="foot-col">
-      <div class="k">Contact</div>
+      <div class="k">联系</div>
       <a href="mailto:hello@meaningx.cn">hello@meaningx.cn</a>
-      <a href="/zh.html">ZH ↗</a>
+      <a href="/">英文版 ↗</a>
     </div>
   </div>
   <div class="foot-base">
-    <span>© 2026 MeaningX — Design for Meaning</span>
-    <span>In the name of plurality ✳</span>
+    <span>© 2026 MeaningX — 为意义而设计</span>
+    <span>以多元之名 ✳</span>
   </div>
 </footer>
 
 <div id="tweaks">
   <div id="tweak-panel">
-    <div class="lbl">Accent</div>
+    <div class="lbl">强调色</div>
     <div class="swatches">
-      <button class="sw active" data-accent="#F2B3E9" style="background:#F2B3E9" aria-label="Orchid"></button>
-      <button class="sw" data-accent="#B0B8F7" style="background:#B0B8F7" aria-label="Periwinkle"></button>
-      <button class="sw" data-accent="#A6E7C8" style="background:#A6E7C8" aria-label="Mint"></button>
-      <button class="sw" data-accent="#F6CFA4" style="background:#F6CFA4" aria-label="Apricot"></button>
+      <button class="sw active" data-accent="#F2B3E9" style="background:#F2B3E9" aria-label="淡紫"></button>
+      <button class="sw" data-accent="#B0B8F7" style="background:#B0B8F7" aria-label="长春花"></button>
+      <button class="sw" data-accent="#A6E7C8" style="background:#A6E7C8" aria-label="薄荷"></button>
+      <button class="sw" data-accent="#F6CFA4" style="background:#F6CFA4" aria-label="蜜杏"></button>
     </div>
     <div class="tg-row">
-      <span class="lbl">Dark</span>
-      <button class="tg" id="theme-btn">ON</button>
+      <span class="lbl">暗色</span>
+      <button class="tg" id="theme-btn">开</button>
     </div>
   </div>
-  <button id="tweak-btn" aria-label="Tweaks">✳</button>
+  <button id="tweak-btn" aria-label="调整">✳</button>
 </div>
 
 <script>
-/* ==== Defaults (Tweaks persistence) ==== */
+/* ==== 默认值（调整面板持久化） ==== */
 /* EDITMODE-BEGIN
 {"accent":"#F2B3E9","theme":"dark"}
 EDITMODE-END */
@@ -548,7 +550,7 @@ EDITMODE-END */
   try { state = JSON.parse(localStorage.getItem("mx-tweaks-v2")) || defaults; }
   catch(e){ state = defaults; }
 
-  /* --- Step 1: register edit-mode listeners first --- */
+  /* --- 第一步：先注册编辑模式监听 --- */
   window.addEventListener("message", function(e){
     var d = e.data;
     if(!d || typeof d !== "object") return;
@@ -556,7 +558,7 @@ EDITMODE-END */
       if(d.edits.accent) setAccent(d.edits.accent, false);
       if(d.edits.theme) setTheme(d.edits.theme, false);
     }
-    if(d.type === "__deactivate_edit_mode"){ /* noop */ }
+    if(d.type === "__deactivate_edit_mode"){ /* 无操作 */ }
   });
 
   function apply(){
@@ -565,7 +567,7 @@ EDITMODE-END */
   }
   function persist(){
     try { localStorage.setItem("mx-tweaks-v2", JSON.stringify(state)); } catch(e){}
-    /* --- Step 3: report value changes --- */
+    /* --- 第三步：值变化时上报 --- */
     try { window.parent.postMessage({type:"__edit_mode_set_keys", edits:state}, "*"); } catch(e){}
   }
   function setAccent(color, save){
@@ -580,14 +582,14 @@ EDITMODE-END */
     state.theme = t;
     document.documentElement.classList.toggle("dark", t === "dark");
     var btn = document.getElementById("theme-btn");
-    if(btn) btn.textContent = (t === "dark") ? "ON" : "OFF";
+    if(btn) btn.textContent = (t === "dark") ? "开" : "关";
     if(save){ persist(); }
   }
 
-  /* --- Step 2: announce edit-mode support --- */
+  /* --- 第二步：宣布支持编辑模式 --- */
   try { window.parent.postMessage({type:"__edit_mode_available"}, "*"); } catch(e){}
 
-  /* --- Panel interactions --- */
+  /* --- 面板交互 --- */
   var panel = document.getElementById("tweak-panel");
   document.getElementById("tweak-btn").addEventListener("click", function(){
     panel.classList.toggle("open");
@@ -602,7 +604,7 @@ EDITMODE-END */
   apply();
 })();
 
-/* ==== Reveal on scroll ==== */
+/* ==== 滚动显现 ==== */
 (function(){
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
@@ -612,18 +614,18 @@ EDITMODE-END */
   document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
 })();
 
-/* ==== Terminal typing loop ==== */
+/* ==== 终端打字循环 ==== */
 (function(){
   var term = document.getElementById("term");
   var lines = [
-    {cls:"u",    text:"help me ground this palette — inspiration and rationale"},
-    {cls:"dim",  text:"calling design expert agents · parsing 6 inspiration items"},
-    {cls:"ok",   text:"✓ inspiration pocket: detected 'Bauhaus × ecological design' twin threads"},
-    {cls:"warn", text:"! color contrast 3.1:1 — below accessibility threshold 4.5:1"},
-    {cls:"u",    text:"provide critique, citing the source for each line"},
-    {cls:"hl",   text:"→ 3 critiques generated, with design-history precedents and standard citations"},
-    {cls:"dim",  text:"[apply all] [review individually] [try another school]"},
-    {cls:"dim",  text:"— every critique traces back to the knowledge base; rebuttals welcome —"}
+    {cls:"u",    text:"请帮我梳理这一配色方案的灵感来源与依据"},
+    {cls:"dim",  text:"调用设计专家智能体 · 解析灵感素材 6 件"},
+    {cls:"ok",   text:"✓ 灵感口袋：识别出“包豪斯 × 生态设计”双线索"},
+    {cls:"warn", text:"! 色彩对比度 3.1:1，低于无障碍阈值 4.5:1"},
+    {cls:"u",    text:"请给出评审意见，并逐条引用依据"},
+    {cls:"hl",   text:"→ 3 条意见已生成，附设计史先例与规范条目引用"},
+    {cls:"dim",  text:"【应用全部】【逐条审阅】【换个流派再试】"},
+    {cls:"dim",  text:"— 每条意见均可追溯至知识库，欢迎反驳 —"}
   ];
   var li = 0, ci = 0, cur = null;
 
@@ -663,14 +665,14 @@ EDITMODE-END */
   tio.observe(term);
 })();
 
-/* ==== Waitlist ==== */
+/* ==== 候补名单 ==== */
 (function(){
   var form = document.getElementById("wl-form");
   form.addEventListener("submit", function(e){
     e.preventDefault();
     var wrap = document.getElementById("waitlist");
-    form.outerHTML = '<span class="wl-done">✳ Got it — you will be the first to know. The list stays plural.</span>';
-    wrap.querySelector("h3").textContent = "You are on the list.";
+    form.outerHTML = '<span class="wl-done">✳ 已收到——我们将在第一时间通知你。名单保持多元。</span>';
+    wrap.querySelector("h3").textContent = "已列入名单。";
   });
 })();
 </script>
