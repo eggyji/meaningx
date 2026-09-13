@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    { "source": "/", "has": [{ "type": "host", "value": "meaningx.ai" }], "destination": "/en.html" },
+    { "source": "/", "has": [{ "type": "host", "value": "www.meaningx.ai" }], "destination": "/en.html" },
+    { "source": "/zh.html", "has": [{ "type": "host", "value": "meaningx.ai" }], "destination": "/index.html" },
+    { "source": "/zh.html", "has": [{ "type": "host", "value": "www.meaningx.ai" }], "destination": "/index.html" }
+  ],
+  "redirects": [
+    { "source": "/index.html", "has": [{ "type": "host", "value": "meaningx.ai" }], "destination": "/", "permanent": false },
+    { "source": "/index.html", "has": [{ "type": "host", "value": "www.meaningx.ai" }], "destination": "/", "permanent": false },
+    { "source": "/en.html", "has": [{ "type": "host", "value": "meaningx.ai" }], "destination": "/", "permanent": false }
+  ]
+}
